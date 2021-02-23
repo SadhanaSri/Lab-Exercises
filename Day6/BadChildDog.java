@@ -1,56 +1,40 @@
 package day6;
 
 public class BadChildDog {
-	public static void main(String args[]) throws Exception {
-		NaughtyChild child = new NaughtyChild();
-		BullDog dog = ContainerClass.get(args[0]);
-		child.playwith(dog);
-	}
-}
-
-class ContainerClass
-{
-	public static BullDog get(String p) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-	BullDog dog = new BullDog();
-	ItemToPlay play = (ItemToPlay)Class.forName(p).newInstance();
-	dog.play = play;
-	return dog;
+	public static void main(String[] args) throws Exception {
+		BullDog dog = NaughtyChild.getItem(args[0]);
+		dog.play();
 	}
 }
 
 class BullDog {
-	ItemToPlay play;
-	public void get() {
-		play.playwithdog();
+	ItemToPlay item;
+	public void play() {
+		item.playwithdog();
 	}
 }
 
 class NaughtyChild {
-	public void playwith(BullDog dog)
-	{
-		dog.get();
+	public static BullDog getItem(String name) throws Exception{
+		BullDog dog = new BullDog();
+		ItemToPlay item = (ItemToPlay)Class.forName(name).newInstance();
+		dog.item = item;
+		return dog;
 	}
 }
 
-abstract class ItemToPlay
-{
-	public abstract void playwithdog(); 
-	
+abstract class ItemToPlay {
+	public abstract void playwithdog();
 }
 
-class Stick extends ItemToPlay{
-	@Override
+class Stone extends ItemToPlay {
 	public void playwithdog() {
-		System.out.println("You beat I bite");
+		System.out.println("Stone");
 	}
 }
 
-class Stone extends ItemToPlay
-{
-	@Override
+class Stick extends ItemToPlay {
 	public void playwithdog() {
-		System.out.println("You hit I bark");
+		System.out.println("Stick");
 	}
 }
-
-
