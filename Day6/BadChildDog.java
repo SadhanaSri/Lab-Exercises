@@ -29,12 +29,12 @@ abstract class ItemToPlay {
 
 class Stone extends ItemToPlay {
 	public void playwithdog() {
-		System.out.println("Stone");
+		System.out.println("Stone..You hit I bark...");
 	}
 }
 
 class Stick extends ItemToPlay {
 	public void playwithdog() {
-		System.out.println("Stick");
+		System.out.println("Stick..You beat I bite...");
 	}
 }
