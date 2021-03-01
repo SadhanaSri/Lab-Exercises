@@ -9,6 +9,8 @@ public class GCDemo {
 		System.out.println("Before object creation..."+r.freeMemory());
 		GrandFather obj = new GrandFather();
 		System.out.println("After object creation...."+r.freeMemory());
+// 		PhantomReference phantomObj = new PhantomReference(obj);
+// 		WeakReference weakObj = new WeakReference(obj);
 		SoftReference softObj = new SoftReference(obj);
 		obj = null;
 		System.out.println("After nullifying...."+r.freeMemory());
