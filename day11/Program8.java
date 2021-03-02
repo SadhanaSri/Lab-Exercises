@@ -32,7 +32,6 @@ public class Program8 {
 	int getInput() {
 		Scanner sc = new Scanner(System.in);
 		int num =  sc.nextInt();
-		sc.close();
 		return num;
 	}
 }
