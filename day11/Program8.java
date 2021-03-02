@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Program8 {
 	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
 		int n=1;
 		int mark;
 		int sum=0;
@@ -26,7 +25,6 @@ public class Program8 {
 			} while(n <= 10);	
 			
 		System.out.println("Average mark of 10 students: "+sum/10);
-		sc.close();
 	}
 	
 	int getInput() {
