@@ -22,11 +22,13 @@ public class DeadlockDemo {
 
 class Crane {
 	synchronized public void eatFrog(Frog frog) {
+		try{Thread.sleep(5000);}catch(Exception e) {} 
+		System.out.println(" "); 
 		frog.leaveCrane();
 		System.out.println("Frog in crane tummy...");
 	}
 	synchronized public void leaveFrog() {
-		
+		System.out.println("leave frog");
 	}
 }
 
@@ -37,6 +39,6 @@ class Frog {
 	}
 	
 	synchronized public void leaveCrane() {
-		
+		System.out.println("leave crane");
 	}
 }
