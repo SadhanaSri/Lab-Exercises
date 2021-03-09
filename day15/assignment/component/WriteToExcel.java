@@ -21,7 +21,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 interface XMLToExcel {
-	void writeData() throws Exception;
+	void writeData(String fileName) throws Exception;
 	void initXls() throws Exception;
 }
 
@@ -30,14 +30,14 @@ public class WriteToExcel implements XMLToExcel {
 	private static XSSFWorkbook workbook;
 	    
 	@Override
-	public void writeData() throws Exception {
+	public void writeData(String fileName) throws Exception {
 		initXls();
 		XSSFSheet sheet = workbook.getSheetAt(0);		
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		dbf.setIgnoringElementContentWhitespace(true);
 		dbf.setValidating(true);
 		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document doc = db.parse("invoices.xml");
+		Document doc = db.parse(fileName);
 		Map<Integer, Object[]> map = new TreeMap<>();
 
 		NodeList list = doc.getElementsByTagName("invoice");
