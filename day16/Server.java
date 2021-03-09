@@ -26,19 +26,27 @@ public class Server {
 			
 			while(true) {
 				Socket client = server.accept();
-				System.out.println("New client connected.."+client.getInetAddress().getHostAddress());
+				System.out.println(client.getInetAddress().getHostAddress());
 				Server clientSocket = new Server(client);
 				
 				ExecutorService es = Executors.newFixedThreadPool(1);
 				es.execute(() -> {
 					PrintWriter out=null;
 					BufferedReader in=null;
+					BufferedReader br;
+					
 			        try {
-						out = new PrintWriter(clientSocket.getOutputStream(), true);					
-						in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream())); 
-			            String line = in.readLine();
-			            System.out.printf("Sent from the client: %s\n", line); 
-			            out.println(line); 
+			        	while(true) {
+						out = new PrintWriter(client.getOutputStream(), true);					
+						in = new BufferedReader(new InputStreamReader(System.in));
+						System.out.println("Enter a message to Client: ");
+						String msg = in.readLine();
+						out.println(msg); 
+						
+						br = new BufferedReader(new InputStreamReader(client.getInputStream()));
+						String msgFromClient = br.readLine();
+						System.out.println("Message from Client: "+msgFromClient);
+			        	}
 			        } catch (IOException e) {
 							e.printStackTrace();
 					}			
@@ -56,8 +64,6 @@ public class Server {
 //				String msg = in.readLine();
 //				out.println(msg);
 //				
-//				br = new BufferedReader(new InputStreamReader(client.getInputStream()));
-//				String msgFromClient = br.readLine();
-//				System.out.println("Message from Client: "+msgFromClient);
+//				
 
 
