@@ -10,7 +10,7 @@ public class ComponentDemo {
 		Object obj = new ComponentDemo();
 		obj = Proxy.newProxyInstance(ComponentDemo.class.getClassLoader(), new Class[] {XMLToExcel.class}, new MyInvocationHandler(new WriteToExcel()));
 		XMLToExcel con = (XMLToExcel)obj;
-		con.writeData();
+		con.writeData(args[0]);
 	}
 }
 
