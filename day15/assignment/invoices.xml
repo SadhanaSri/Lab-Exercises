@@ -1,0 +1,27 @@
+<!DOCTYPE invoices SYSTEM "invoices.dtd">
+<invoices>
+	<invoice>
+		<sno>1</sno>
+		<item>Dhal</item>
+		<unit>1</unit>
+		<price>120</price>
+		<qty>2</qty>
+		<amount>240</amount>
+	</invoice>
+	<invoice>
+		<sno>2</sno>
+		<item>Rice</item>
+		<unit>1</unit>
+		<price>250</price>
+		<qty>2</qty>
+		<amount>500</amount>
+	</invoice>
+	<invoice>
+		<sno>3</sno>
+		<item>Salt</item>
+		<unit>2</unit>
+		<price>50</price>
+		<qty>1</qty>
+		<amount>100</amount>
+	</invoice>
+</invoices>

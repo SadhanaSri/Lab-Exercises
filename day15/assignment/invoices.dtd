@@ -1,0 +1,8 @@
+<!ELEMENT invoices (invoice+)>
+<!ELEMENT invoice (sno, item+, unit, price, qty, amount)>
+<!ELEMENT sno (#PCDATA)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT unit (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT qty (#PCDATA)>
+<!ELEMENT amount (#PCDATA)>
