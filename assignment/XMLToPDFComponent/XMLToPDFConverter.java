@@ -15,28 +15,6 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
-//import java.io.FileOutputStream;
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//import javax.xml.parsers.ParserConfigurationException;
-//import javax.xml.parsers.SAXParser;
-//import javax.xml.parsers.SAXParserFactory;
-//
-//import org.xml.sax.Attributes;
-//import org.xml.sax.SAXException;
-//import org.xml.sax.helpers.DefaultHandler;
-
-//import com.itextpdf.text.BaseColor;
-//import com.itextpdf.text.Document;
-//import com.itextpdf.text.Element;
-//import com.itextpdf.text.Paragraph;
-//import com.itextpdf.text.pdf.PdfPCell;
-//import com.itextpdf.text.pdf.PdfPTable;
-//import com.itextpdf.text.pdf.PdfWriter;
-
-
-
 interface XMLToPDF {
 	void convert(InvoiceParser invoice) throws Exception;
 }
@@ -107,59 +85,3 @@ class XMLToPDFConverter implements XMLToPDF {
 		  table.addCell(cell);		   
 	}
 }
-
-//PdfDocument pdfDoc = new PdfDocument(new PdfWriter("Invoice.pdf")); 
-//pdfDoc.addNewPage();
-//Document document = new Document(pdfDoc);    
-//Table table = new Table(5); 
-//table.addCell(new Cell().add("Name")); 
-//table.addCell(new Cell().add("Raju")); 
-//table.addCell(new Cell().add("Id")); 
-//table.addCell(new Cell().add("1001")); 
-//table.addCell(new Cell().add("Designation")); 
-//table.addCell(new Cell().add("Programmer"));
-//
-//document.add(table); 
-//document.close();
-
-//	public static void main(String[] args) throws Exception {
-//		Document document = new Document();
-		 
-//	        PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("Invoice.pdf"));
-//			document.open();
-//	        document.add(new Paragraph("Invoice"));	        
-//	        PdfPTable table = new PdfPTable(3); // 3 columns.
-//	        table.setWidthPercentage(100); //Width 100%
-//	        table.setSpacingBefore(10f); //Space before table
-//	        table.setSpacingAfter(10f); //Space after table
-//	 
-//	        //Set Column widths
-//	        float[] columnWidths = {1f, 1f, 1f};
-//	        table.setWidths(columnWidths);
-//	 
-//	        PdfPCell cell1 = new PdfPCell(new Paragraph("Cell 1"));
-//	        cell1.setBorderColor(BaseColor.BLUE);
-//	        cell1.setPaddingLeft(10);
-//	        cell1.setHorizontalAlignment(Element.ALIGN_CENTER);
-//	        cell1.setVerticalAlignment(Element.ALIGN_MIDDLE);
-//	 
-//	        PdfPCell cell2 = new PdfPCell(new Paragraph("Cell 2"));
-//	        cell2.setBorderColor(BaseColor.GREEN);
-//	        cell2.setPaddingLeft(10);
-//	        cell2.setHorizontalAlignment(Element.ALIGN_CENTER);
-//	        
-//	        table.addCell(cell1);
-//	        table.addCell(cell2);
-	 
-		
-//		SAXParserFactory spf=SAXParserFactory.newInstance(); 
-//		SAXParser sp=spf.newSAXParser(); 
-//		sp.parse("invoices.xml",new MyXMLHandler()); 
-//	}
-//}
-
-
-
-//socket creation outside while in client
-//thread in server side..for every socket one thread
-//keep the socket and id for socket in hashmap... pass the socket along with the id 
