@@ -15,7 +15,6 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 interface EmailServiceProvider {
-	public void sendMailUtil(InvoiceParser invoice) throws Exception;
 	public void sendMail(String filename) throws Exception;
 }
 
@@ -28,7 +27,7 @@ class EmailService implements EmailServiceProvider {
 		this.sendMailUtil((InvoiceParser) invoice);
 	}
 	
-	public void sendMailUtil(InvoiceParser invoice) throws Exception {
+	private void sendMailUtil(InvoiceParser invoice) throws Exception {
 		invoice = invoice.getInvoice();
     	
     	final String host = "smtp.gmail.com";
