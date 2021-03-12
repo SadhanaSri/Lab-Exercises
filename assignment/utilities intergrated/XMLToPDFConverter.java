@@ -15,7 +15,6 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
 interface XMLToPDF {
-	public void convertToPDFUtil(InvoiceParser invoice) throws Exception;
 	public void convertToPDF(String filename) throws Exception;
 }
 
@@ -28,8 +27,7 @@ class XMLToPDFConverter implements XMLToPDF {
 		this.convertToPDFUtil((InvoiceParser) invoice);		
 	}
 	
-	@Override
-	public void convertToPDFUtil(InvoiceParser invoice) throws Exception {
+	private void convertToPDFUtil(InvoiceParser invoice) throws Exception {
 //		System.out.println(invoice.getCustName());
 		Document doc = new Document();
 		PdfWriter docWriter = null; 
