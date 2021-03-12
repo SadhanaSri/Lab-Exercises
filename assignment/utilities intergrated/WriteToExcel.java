@@ -17,7 +17,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 interface XMLToExcel {
-	void writeData(InvoiceParser invoice) throws Exception;
 	void initXls() throws Exception;
 	void convertToExcel(String filename) throws Exception;
 }
@@ -32,8 +31,8 @@ public class WriteToExcel implements XMLToExcel {
 		this.writeData((InvoiceParser) invoice);
 	}
 	
-	@Override
-	public void writeData(InvoiceParser invoice) throws Exception {
+	
+	private void writeData(InvoiceParser invoice) throws Exception {
 		initXls();
 		XSSFSheet sheet = workbook.getSheetAt(0);		
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
