@@ -17,7 +17,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 interface XMLToExcel {
-	void initXls() throws Exception;
 	void convertToExcel(String filename) throws Exception;
 }
 
@@ -78,8 +77,8 @@ public class WriteToExcel implements XMLToExcel {
         System.out.println("bill.xlsx written successfully.");	
 	}
 						
-	@Override
-	public void initXls() throws Exception {
+	
+	private void initXls() throws Exception {
 		workbook = new XSSFWorkbook();
 		XSSFSheet sheet = workbook.createSheet("Bill");
 		CellStyle style = workbook.createCellStyle();
