@@ -7,8 +7,7 @@ import java.lang.reflect.Proxy;
 public class Main {
 	public static void main(String[] args) throws Exception {
 		Object obj = new Main();
-		obj = Proxy.newProxyInstance(Main.class.getClassLoader(), new Class[] {XMLToPDF.class, XMLToExcel.class, EmailServiceProvider.class},  new MyServiceHandler( new Object[] {new XMLToPDFConverter(), new WriteToExcel(), new EmailService()}));
-		
+		obj = Proxy.newProxyInstance(Main.class.getClassLoader(), new Class[] {XMLToPDF.class, XMLToExcel.class, EmailServiceProvider.class, SMSServiceProvider.class},  new MyServiceHandler( new Object[] {new XMLToPDFConverter(), new WriteToExcel(), new EmailService(), new SMSService()}));
 		
 		XMLToPDF pdfConverter = (XMLToPDF)obj;
 		pdfConverter.convertToPDF(args[0]);
@@ -18,6 +17,9 @@ public class Main {
 		
 		EmailServiceProvider emailSender = (EmailServiceProvider)obj;
 		emailSender.sendMail(args[0]);
+		
+		SMSServiceProvider smsSender = (SMSServiceProvider)obj;
+		smsSender.sendSMS(args[0]);
 		
 	}
 }
