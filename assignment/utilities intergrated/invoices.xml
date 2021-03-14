@@ -1,0 +1,25 @@
+<!DOCTYPE invoice SYSTEM "invoices.dtd">
+<invoice>
+		<custName>Priya</custName>
+		<invNo>7888</invNo>
+		<date>08/03/2021</date>
+		<items>
+			<item>
+				<itemNo>1</itemNo>
+				<itemName>Shampoo</itemName>
+				<price>100</price>
+				<qty>1</qty>
+				<amount>100</amount>
+			</item>
+		
+			<item>
+				<itemNo>2</itemNo>
+				<itemName>Oil</itemName>
+				<price>200</price>
+				<qty>2</qty>
+				<amount>400</amount>
+			</item>
+		</items>
+		<gst>20</gst>
+		<net>520</net>
+</invoice>

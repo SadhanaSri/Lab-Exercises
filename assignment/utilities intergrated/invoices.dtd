@@ -1,0 +1,13 @@
+<!ELEMENT invoice (custName, invNo, date, items, gst, net)>
+<!ELEMENT custName (#PCDATA)>
+<!ELEMENT invNo (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT items (item+)>
+<!ELEMENT item (itemNo, itemName, price, qty, amount)>
+<!ELEMENT itemNo (#PCDATA)>
+<!ELEMENT itemName (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT qty (#PCDATA)>
+<!ELEMENT amount (#PCDATA)>
+<!ELEMENT gst (#PCDATA)>
+<!ELEMENT net (#PCDATA)>
