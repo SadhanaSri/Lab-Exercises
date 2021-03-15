@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class Jdbc2 {
 	public static void main(String[] args) throws Exception {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ey", "root", "@sadhanakalyan1822");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ey", "root", "");
 		
 		PreparedStatement updateSales; //= con.prepareStatement("update coffees where name=? set total=100");
 		PreparedStatement updateTotal;
