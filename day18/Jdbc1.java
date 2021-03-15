@@ -12,7 +12,7 @@ import java.sql.DatabaseMetaData;
 public class Jdbc1 {
 	public static void main(String[] args) throws Exception {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ey", "root", "@sadhanakalyan1822");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ey", "root", "");
 		
 //		metadata
 		DatabaseMetaData dbmd = con.getMetaData();
