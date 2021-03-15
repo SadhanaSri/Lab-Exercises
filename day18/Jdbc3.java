@@ -8,7 +8,7 @@ import java.sql.Types;
 public class Jdbc3 {
 	public static void main(String[] args) throws Exception {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ey", "root", "@sadhanakalyan1822");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ey", "root", "");
 		
 		CallableStatement cs = con.prepareCall("{call proc1(?, ?)}");
 		cs.setInt(1, 1);
