@@ -100,7 +100,7 @@ class ParcelTracker implements Tracker {
         	      return baseDate.plusWeeks(businessDays / 5).plusDays(businessDays % 5);
         	    });
 	    
-	    if(endDateTime.getDayOfWeek().equals(DayOfWeek.SATURDAY) || (endDateTime.toLocalDate()).equals(LocalDate.of(endDateTime.getYear(), 1, 1))
+	    if((endDateTime.toLocalDate()).equals(LocalDate.of(endDateTime.getYear(), 1, 1))
 	    		|| (endDateTime.toLocalDate()).equals(LocalDate.of(endDateTime.getYear(), 1, 26))
 	    		|| (endDateTime.toLocalDate()).equals(LocalDate.of(endDateTime.getYear(), 8, 15))
 	    		|| (endDateTime.toLocalDate()).equals(LocalDate.of(endDateTime.getYear(), 10, 2))) {
