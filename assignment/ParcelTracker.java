@@ -10,19 +10,19 @@ import java.time.temporal.TemporalAdjusters;
 import java.util.function.IntFunction;
 
 interface Tracker {
-	int calculateTotalTime(double dist, double speed, LocalTime breakTime);
-	LocalDateTime calculateBusinessDays(int totalTime, LocalDateTime endDateTime);
-	LocalDateTime addTimeToBusinessDays(int totalTime, LocalDateTime endDateTime);
+	public int calculateTotalTime(double dist, double speed, LocalTime breakTime);
+	public LocalDateTime calculateBusinessDays(int totalTime, LocalDateTime endDateTime);
+	public LocalDateTime addTimeToBusinessDays(int totalTime, LocalDateTime endDateTime);
 }
 
 class ParcelTracker implements Tracker {
-	String startDate;	
-	String startTime;	
-	String source;	
-	String destination; 		
-	double distance; 		
-	double speed;	
-	String travelBreak;	
+	private String startDate;	
+	private String startTime;	
+	private String source;	
+	private String destination; 		
+	private double distance; 		
+	private double speed;	
+	private String travelBreak;	
 		
 	public String getStartDate() {
 		return startDate;
