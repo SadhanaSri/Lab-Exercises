@@ -1,0 +1,17 @@
+ <html>
+	<body>
+		<script>
+		function person(name){ 
+			this.name=name;
+			this.getName = function() {
+				return this.name;
+			};
+		};
+		
+		var obj = new Window['person']("sadhana");
+		document.writeln(obj.getName());
+		</script>
+	</body>
+</html>
+
+                               

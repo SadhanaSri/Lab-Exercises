@@ -1,0 +1,66 @@
+<html>
+	<script>
+
+	let activities = [
+	    ['Work', 9],
+	    ['Eat', 1],
+	    ['Commute', 2],
+	    ['Play Game', 1],
+	    ['Sleep', 7]
+	];
+	
+	function printSales() {
+		let north_sales  = [
+			['Jan', document.sales.no_jan.value],
+			['Feb', document.sales.no_feb.value],
+			['March', document.sales.no_mar.value],
+			['April', document.sales.no_april.value],
+		];
+		
+		let central_sales  = [
+			['Jan', document.sales.cl_jan.value],
+			['Feb', document.sales.cl_feb.value],
+			['March', document.sales.cl_mar.value],
+			['April', document.sales.cl_april.value],
+		];
+		
+		let south_sales  = [
+			['Jan', document.sales.so_jan.value],
+			['Feb', document.sales.so_feb.value],
+			['March', document.sales.so_mar.value],
+			['April', document.sales.so_april.value],
+		];
+		document.write("hiiiiiiiii");
+		for(var i=0; i<4; i++) {
+			for(var j=0; j<4; j++) {
+				document.write("hiiiiiiiii");
+				document.write(north_sales[i][j]+south_sales[i][j]+central_sales[i][j]);	
+			}	
+		}	
+	}
+		
+	</script>
+	<body>
+		<form name="sales">
+			<label>North</label><br/>
+			<input name="north_jan" type="text" placeholder="Enter month 1 sales" value=""><br/>
+			<input name="north_feb" type="text" placeholder="Enter month 2 sales" value=""><br/>
+			<input name="north_mar" type="text" placeholder="Enter month 3 sales" value=""><br/>
+			<input name="north_april" type="text" placeholder="Enter month 4 sales" value=""><br/><br/>
+			
+			<label>Central</label><br/>
+			<input name="central_jan" type="text" placeholder="Enter month 1 sales" value=""><br/>
+			<input name="central_feb" type="text" placeholder="Enter month 2 sales" value=""><br/>
+			<input name="central_mar" type="text" placeholder="Enter month 3 sales" value=""><br/>
+			<input name="central_april" type="text" placeholder="Enter month 4 sales" value=""><br/><br/>
+			
+			<label>South</label><br/>
+			<input name="south_jan" type="text" placeholder="Enter month 1 sales" value=""><br/>
+			<input name="south_feb" type="text" placeholder="Enter month 2 sales" value=""><br/>
+			<input name="south_mar" type="text" placeholder="Enter month 3 sales" value=""><br/>
+			<input name="south_april" type="text" placeholder="Enter month 4 sales" value=""><br/>
+			
+			<input type="submit" value="submit" onClick=printSales();>
+		</form>
+	</body>
+</html>

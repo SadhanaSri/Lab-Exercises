@@ -1,0 +1,52 @@
+<html>
+	<HEAD>
+		<TITLE> ABC Bank </TITLE>
+		<SCRIPT>
+			var name;
+			var accno;
+			var acctype;
+			var balance;
+		
+			
+       		function init() {
+       			name = document.form1.name.value;
+       			accno = document.form1.accno.value;
+       			acctype = document.form1.acctype.value;
+       			balance = balance();
+       			alert(balance);
+       		}
+       		
+       		this.balance = function() {
+       			return document.form1.amount.value;
+       		}
+       		
+       		function checkBalance() {
+       			alert("Your current balance is Rs."+balance);
+       		}
+       		
+       		function withdraw() {
+                var  entry  = prompt("Enter amount to withdraw:","")
+
+                if (entry!=null) {
+                	 this.balance = balance-entry;
+                	 alert("amount of Rs."+entry+" withdrawn");	
+                }
+                else {
+                        alert("Enter valid amount");
+                }
+       		}
+       		
+		</SCRIPT>
+	</HEAD>
+	<body>
+		<form name="form1">
+			<label for="name">NAME: <br><input name="name" type="text" value=""></label><br>
+			<label for="accno">ACCOUNT NO: <br><input name="accno" type="text" value=""></label><br>
+			<label for="acctype">ACCOUNT TYPE:<br><input name="acctype" type="text" value=""></label><br>
+			<label for="amount">ENTER AMOUNT TO DEPOSIT:<br><input name="amount" type="number" value=""></label><br>
+			<br><input type="submit" name="submit" value="Register" onClick=init();><br>
+			<br><input type="submit" value="Check Balance" onClick=checkBalance();><br>
+			<br><input type="submit" value="Withdraw Amount" onClick=withdraw();><br>
+		</form>
+	</body>
+</html>

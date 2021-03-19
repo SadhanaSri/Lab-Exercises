@@ -1,0 +1,20 @@
+<html>
+	<body>
+		<script>
+			var counter=0;
+			ID = window.setTimeout("Update();", 2000);
+			
+			function Update() {
+				counter++;
+				window.status="The counter is now at:"+counter;
+				
+				ID = window.setTimeout("Update();", 2000);
+			}
+		</script>
+		<FORM name="form1">
+				<INPUT TYPE="text" NAME="input1" SIZE="40"><BR>
+				<INPUT TYPE="button" VALUE="RESET" onClick="counter=0;"><BR>
+				<INPUT TYPE="button" VALUE="STOP" onClick="window.clearTimout(ID);">
+		</FORM>
+	</body>
+</html>

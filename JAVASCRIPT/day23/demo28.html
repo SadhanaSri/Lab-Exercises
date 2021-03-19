@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<script>
+	
+			let list = new Map();
+			list.set('India', 'Delhi');
+			list.set('Japan', 'Tokyo');
+			list.set('China', 'Beijing');
+			
+			function getCapital() {
+				var country = document.form1.country.value;
+				document.write(list.get(country));
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+	<form name="form1">
+		<input type="text" name="country" value="">
+		<input type="button" value="submit" onClick="getCapital()"/>
+	</form>
+</html>

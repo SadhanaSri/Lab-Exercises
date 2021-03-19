@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<script>
+	      var num = 123;
+          var sum = 0;
+          var digit;
+          while(num>0) {
+                  digit = num % 10;
+                  sum += digit;
+                  num  =  parseInt(num/10);
+           }
+           document.writeln(sum);
+			
+           function gcd(m,n) {
+                   return  n>0?gcd(n,m%n):m;
+           }
+           document.writeln(gcd(92,16));
+		</script>
+	</body>
+</html>
+
+                               

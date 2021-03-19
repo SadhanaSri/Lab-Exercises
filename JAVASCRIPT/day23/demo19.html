@@ -1,0 +1,16 @@
+<html>
+	<body>
+		<script>
+			function Person(){}; 
+			
+			Person.prototype.name = "Sadhana"; 
+			var personOne = new Person(); 
+			var personTwo = new Person(); 
+			
+			document.write(personOne.constructor == Person); 
+			document.write(personOne.name); 
+			document.write(personTwo.constructor == Person); 
+			document.write(personTwo.name); 
+		</script>
+	</body>
+</html>

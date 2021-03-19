@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script>
+	
+			let list = new Map();
+			list.set('001', 'New Hampshire');
+			list.set('004', 'Maine');
+			list.set('008', 'Vermont');
+			list.set('050', 'New York');
+			list.set('135', 'New Jersey');
+			list.set('159', 'Pennsylvania');
+			list.set('223', 'Virginia');
+			
+			function getCapital() {
+				var code = document.form1.code.value;
+				document.write(list.get(code));
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+	<form name="form1">
+		<input type="text" name="code" value="">
+		<input type="button" value="search" onClick="getCapital()"/>
+	</form>
+</html>

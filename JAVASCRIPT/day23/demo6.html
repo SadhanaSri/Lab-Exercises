@@ -1,0 +1,29 @@
+<HTML>
+    <HEAD>
+          <TITLE>Simple JavaScript Example </TITLE>
+     </HEAD>
+     <BODY>
+          <SCRIPT>
+          	var x=10, y=20;
+          	
+          	function calculate() {
+          		var sum=x+y;
+          		return sum;
+          	}
+          	
+          	function big() {
+          		return x>y?x:y;	
+          	}
+          	
+          	var sum=function() {
+          		return x+y;
+          	}
+   
+          	//sum=calculate();
+          	var big=big();
+          	document.writeln(sum());
+          	//document.writeln(sum);
+          	document.writeln(big);
+          </SCRIPT>
+     </BODY>
+</HTML>

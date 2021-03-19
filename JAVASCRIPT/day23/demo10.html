@@ -1,0 +1,21 @@
+ <html>
+	<body>
+		<script>
+		var Person=function(name){
+		    var result = new Object();
+		    result.name = name;
+		    result.getName = function(){
+		        return this.name;
+		    };
+		    return result;
+		};
+		var personOne = Person("Diego");
+		var personTwo =Person("Gangelo");
+		console.log(personOne.getName()); // prints Diego
+		console.log(personTwo.getName()); // prints Gangelo
+
+		</script>
+	</body>
+</html>
+
+                               
