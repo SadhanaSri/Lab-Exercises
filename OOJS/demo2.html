@@ -1,0 +1,36 @@
+<html>
+	<body>
+		<script>
+			var ajaxObj = new XMLHttpRequest();
+			function makeAjaxCall(url) {
+				var target = document.getElementById("targetDiv");
+				ajaxObj.open("GET", url);
+				
+				ajaxObj.onreadystatechange = function() {
+					if(ajaxObj.readyState ==4 && ajaxObj.status == 200) {
+						var response = ajaxObj.responseXML;
+						target.innerHTML = response.documentElement.nodeName;
+						var rootelement = response.documentElement;
+						
+						for(var i=0;i<rootelement.childNodes.length;i++) {
+							for(var j=0;j<rootelement.childNodes.item(i).childNodes.length;j++){
+								alert(rootelement.childNodes.item(i).childNodes.item(j).firstChild.nodeValue);			
+							}
+						}
+					}				
+				}
+				
+				ajaxObj.send(null);
+			}
+		</script>
+		<form>
+			<input type="button" onclick="makeAjaxCall('http://localhost:8080/ajaxlab/books.xml')" value="makeAjaxCall">
+		</form>
+		
+		<div id="targetDiv">
+			
+		</div>
+	</body>
+	
+	
+</html>
