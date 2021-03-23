@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+	function check() {
+		var name = document.form1.name.value;
+		var pass = document.form1.pass.value;
+		if(name.length == 0) {
+			alert("Please enter your name");
+			return false;
+		} else if(pass.length == 0) {
+			alert("Please enter password");
+			return false;
+		}else {
+			return true;	
+		}
+	}
+</script>
+</head>
+<body>
+	<form name="form1" method="get" action="Login" onsubmit="return check();">
+		Username: <input type="text" name="name"><br>
+		Password: <input type="password" name="pass"><br>
+		<input type="submit" value="submit">
+	</form>
+</body>
+</html>
