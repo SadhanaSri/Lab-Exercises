@@ -20,7 +20,7 @@ public class DBAccess extends HttpServlet {
 	public void init() throws ServletException {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost/employee", "root", "@sadhanakalyan1822");
+			con = DriverManager.getConnection("jdbc:mysql://localhost/employee", "root", "root");
 			st = con.prepareStatement("insert into data values (?, ?)");
 		} catch (Exception e) {
 			e.printStackTrace();
