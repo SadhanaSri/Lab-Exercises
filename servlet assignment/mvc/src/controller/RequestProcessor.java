@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Action;
@@ -17,7 +18,10 @@ public class RequestProcessor {
 		Properties prop = new Properties();
 		
 		try {
-			prop.load(new FileInputStream("C:\\eclipse-workspace\\mvc\\config.properties"));
+			ServletContext application=request.getServletContext();
+			String path=(String)application.getAttribute("path");
+			
+			prop.load(new FileInputStream(path));
 			String className = "model."+prop.getProperty(val);
 			
 			Action action = (Action)Class.forName(className).getConstructor().newInstance();
