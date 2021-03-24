@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,8 +12,15 @@ public class ActionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	RequestProcessor processor;
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		String file = config.getInitParameter("config");
+		String path = config.getServletContext().getRealPath(file);
+		config.getServletContext().setAttribute("path", path);
 		processor = new RequestProcessor();
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processor.process(request, response);
 	}
 
