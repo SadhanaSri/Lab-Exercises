@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.jumbotron {
+  background-color: #fcfafa; 
+}
+</style>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<body>
+	<div class="jumbotron text-center">
+		<h1>Online Shopping Site</h1>
+  		<h2>Select Your Language <h2>
+  			<form class="form-inline" action="lang.do" method="post">
+    			<div class="input-group">
+    				<input type="hidden" name="formid" value="lang">
+					<select name="language" class="form-control">
+						<option value="en">English</option>
+						<option value="ta">Tamil</option>
+						<option value="te">Telegu</option>
+						<option value="hi">Hindi</option>
+					</select>
+      			<div class="input-group-btn">
+        			<button type="submit" class="btn btn-danger">Continue</button>
+    			</div>
+    			</div>
+  			</form>	
+	</div>	
+</body>
+</html>
