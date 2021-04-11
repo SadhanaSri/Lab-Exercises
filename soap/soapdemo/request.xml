@@ -1,0 +1,1 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><S:Body><ns2:getMacAddress xmlns:ns2="http://soapdemo/"/><S:Fault><faultcode>S:Server</faultcode><faultstring>No header block for next actor</faultstring></S:Fault></S:Body></S:Envelope>

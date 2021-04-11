@@ -1,0 +1,1 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><S:Body><ns2:getMacAddressResponse xmlns:ns2="http://soapdemo/"><return>C0-B6-F9-10-77-FF</return></ns2:getMacAddressResponse></S:Body></S:Envelope>
