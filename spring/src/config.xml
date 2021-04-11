@@ -1,0 +1,63 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+<!-- <bean class="springdemo2.MyBeanPostProcessor"/> -->
+<import resource="config2.xml"/>
+
+<bean id="fac" class="springdemo2.BataShoeFactory">
+	<property name="key">
+		<value>secret key..factory class</value>
+	</property>
+</bean>
+
+<bean id="shop" class="springdemo2.GokulShoeShop" lazy-init="false">
+	<property name="factory">
+		<ref bean="fac"/>
+	</property>
+</bean>
+
+<bean id="wadvice" class="springdemo2.WelcomeAdvice"/>
+<bean id="eadvice" class="springdemo2.ExceptionHandler"/>
+<bean id="aroundadvice" class="springdemo2.ValidationAdvice"/>
+<bean id="endadvice" class="springdemo2.ThankYouAdvice"/>
+
+
+<bean id="advisedShop" class="org.springframework.aop.framework.ProxyFactoryBean">
+	<property name="target">
+		<ref bean="shop"/>
+	</property>
+	<property name="interceptorNames">
+		<list>
+			<value>pointcutadvisor1</value>
+			<value>pointcutadvisor2</value>
+			<value>pointcutadvisor3</value>
+			<value>pointcutadvisor4</value>
+			<value>exportAdvice</value>
+		</list>
+	</property>
+	<property name="proxyInterfaces">
+		<list>
+			<value>springdemo2.ShoeSeller</value>
+			<value>springdemo2.Export</value>
+		</list>
+	</property>
+</bean>
+
+<!-- <bean id="bean1" class="springdemo2.ShoeCustomer" autowire="byName">
+	<property name="name">
+		<value>Sadhana</value>
+	</property>
+</bean>-->
+</beans>
+
+
+
+
